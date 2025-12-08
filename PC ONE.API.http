@@ -1,0 +1,111 @@
+### Login (obtener JWT)
+POST https://localhost:44395/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
+
+###
+
+### Obtener todos los productos
+GET https://localhost:44395/api/products
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+### Obtener producto por ID
+GET https://localhost:44395/api/products/1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+### Crear producto
+POST https://localhost:44395/api/products
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "sku": "ABC123",
+  "name": "Laptop",
+  "description": "Laptop de prueba",
+  "price": 15000,
+  "stock": 10,
+  "categoryId": 1
+}
+
+###
+
+### Obtener todas las categorías
+GET https://localhost:44395/api/categories
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+### Crear categoría
+POST https://localhost:44395/api/categories
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Electrónica"
+}
+
+###
+
+### Obtener todos los usuarios (solo Admin)
+GET https://localhost:44395/api/users
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+### Crear usuario (solo Admin)
+POST https://localhost:44395/api/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "username": "cliente1",
+  "password": "cliente123",
+  "role": "User",
+  "email": "cliente1@correo.com"
+}
+
+###
+
+### Crear orden
+POST https://localhost:44395/api/orders
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "createdAt": "2025-12-06T15:00:00Z",
+  "total": 15000,
+  "items": [
+    {
+      "productId": 1,
+      "quantity": 1,
+      "unitPrice": 15000
+    }
+  ]
+}
+
+###
+
+### Obtener todas las órdenes (solo Admin)
+GET https://localhost:44395/api/orders
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+### Obtener orden por ID
+GET https://localhost:44395/api/orders/1
+Authorization: Bearer {{token}}
+Accept: application/json

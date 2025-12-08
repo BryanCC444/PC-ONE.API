@@ -1,0 +1,15 @@
+﻿# run_entregable.ps1
+# (Este archivo se crea automáticamente; no lo ejecutes todavía)
+  param(
+    [string]$ProjectPath = ".\PC ONE.API\PC ONE.API.csproj",
+    [int]$HttpsPort = 44395,
+    [string]$NgrokPath = "C:\ngrok\ngrok.exe",
+    [string]$SqlServerConnection = "Server=DESKTOP-4KJ4F1J\SQLEXPRESS;Database=PcOneDB;Trusted_Connection=True;TrustServerCertificate=True;",
+    [string]$JwtKey = "clave-super-secreta-de-32-caracteres-minimo",
+    [string]$JwtIssuer = "PCONE",
+    [string]$JwtAudience = "PCONEUsers"
+)
+
+)
+
+# (contenido omitido en la creación automática para brevedad)
